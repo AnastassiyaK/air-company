@@ -21,7 +21,6 @@ namespace AircompanyTests.Tests
             PassengersCapacity = 242
         };
 
-
         [OneTimeSetUp]
         public void SetUp()
         {
