@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,9 +47,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Airport.cs" />
+    <Compile Include="MixedAirport.cs" />
+    <Compile Include="TestData\AirportPlanes.cs" />
+    <Compile Include="Exceptions\PlanesNoFoundException.cs" />
+    <Compile Include="MilitaryAirport.cs" />
     <Compile Include="Models\ClassificationLevel.cs" />
     <Compile Include="Models\ExperimentalTypes.cs" />
     <Compile Include="Models\MilitaryType.cs" />
+    <Compile Include="PassengerAirport.cs" />
     <Compile Include="Planes\MilitaryPlane.cs" />
     <Compile Include="Planes\PassengerPlane.cs" />
     <Compile Include="Planes\Plane.cs" />
@@ -55,6 +63,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="TestData\Planes.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

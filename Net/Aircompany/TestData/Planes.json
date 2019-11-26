@@ -1,0 +1,104 @@
+﻿{
+  "PassengerPlanes": [
+    {
+      "Model": "Boeing-737",
+      "MaxSpeed": 900,
+      "MaxFlightDistance": 12000,
+      "MaxLoadCapacity": 60500,
+      "PassengersCapacity": 164
+    },
+    {
+      "Model": "Boeing-737-800",
+      "MaxSpeed": 940,
+      "MaxFlightDistance": 12300,
+      "MaxLoadCapacity": 63870,
+      "PassengersCapacity": 192
+    },
+    {
+      "Model": "Boeing-747",
+      "MaxSpeed": 980,
+      "MaxFlightDistance": 16100,
+      "MaxLoadCapacity": 70500,
+      "PassengersCapacity": 242
+    },
+    {
+      "Model": "Airbus A320",
+      "MaxSpeed": 930,
+      "MaxFlightDistance": 11800,
+      "MaxLoadCapacity": 65500,
+      "PassengersCapacity": 188
+    },
+    {
+      "Model": "Airbus A330",
+      "MaxSpeed": 990,
+      "MaxFlightDistance": 14800,
+      "MaxLoadCapacity": 80500,
+      "PassengersCapacity": 222
+    },
+    {
+      "Model": "Embraer 190",
+      "MaxSpeed": 870,
+      "MaxFlightDistance": 8100,
+      "MaxLoadCapacity": 30800,
+      "PassengersCapacity": 64
+    },
+    {
+      "Model": "Sukhoi Superjet 100",
+      "MaxSpeed": 870,
+      "MaxFlightDistance": 11500,
+      "MaxLoadCapacity": 50500,
+      "PassengersCapacity": 140
+    },
+    {
+      "Model": "Bombardier CS300",
+      "MaxSpeed": 920,
+      "MaxFlightDistance": 11000,
+      "MaxLoadCapacity": 60700,
+      "PassengersCapacity": 196
+    }
+  ],
+  "MilitaryPlanes": [
+    {
+      "Model": "B-1B Lancer",
+      "MaxSpeed": 1050,
+      "MaxFlightDistance": 21000,
+      "MaxLoadCapacity": 80000,
+      "MilitaryType": "BOMBER"
+    },
+    {
+      "Model": "B-2 Spirit",
+      "MaxSpeed": 1030,
+      "MaxFlightDistance": 22000,
+      "MaxLoadCapacity": 70000,
+      "MilitaryType": "BOMBER"
+    },
+    {
+      "Model": "B-52 Stratofortress",
+      "MaxSpeed": 1000,
+      "MaxFlightDistance": 20000,
+      "MaxLoadCapacity": 80000,
+      "MilitaryType": "BOMBER"
+    },
+    {
+      "Model": "F-15",
+      "MaxSpeed": 1500,
+      "MaxFlightDistance": 12000,
+      "MaxLoadCapacity": 10000,
+      "MilitaryType": "FIGHTER"
+    },
+    {
+      "Model": "F-22",
+      "MaxSpeed": 1550,
+      "MaxFlightDistance": 13000,
+      "MaxLoadCapacity": 11000,
+      "MilitaryType": "FIGHTER"
+    },
+    {
+      "Model": "C-130 Hercules",
+      "MaxSpeed": 650,
+      "MaxFlightDistance": 5000,
+      "MaxLoadCapacity": 110000,
+      "MilitaryType": "TRANSPORT"
+    }
+  ]
+}
