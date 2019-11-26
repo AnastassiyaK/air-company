@@ -4,6 +4,7 @@ using Aircompany.Models;
 using Aircompany.Planes;
 using NUnit.Framework;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace AircompanyTests.Tests
 {
@@ -28,28 +29,22 @@ namespace AircompanyTests.Tests
         }
 
         [Test]
-        public void MyTest1()
+        public void CheckTransportMilitaryPlanesOnly()
         {
             MixedAirport airport = new MixedAirport
             {
                 Planes = planes
             };
-            List<MilitaryPlane> transportMilitaryPlanes = airport.GetTransportMilitaryPlanes();
-            bool hasMilitaryTransportPlane = false;
 
-            foreach (MilitaryPlane militaryPlane in transportMilitaryPlanes)
-            {
-                if ((militaryPlane.Type == MilitaryType.TRANSPORT))
-                {
-                    hasMilitaryTransportPlane = true;
-                }
-            }
+            var actualTransportMilitaryPlanes = airport.GetTransportMilitaryPlanes();
 
-            Assert.IsTrue(hasMilitaryTransportPlane);
+            var expectedPlanes = actualTransportMilitaryPlanes.Where(p => p.Type == MilitaryType.TRANSPORT).ToList();
+
+            CollectionAssert.AreEquivalent(actualTransportMilitaryPlanes, expectedPlanes);
         }
 
         [Test]
-        public void MyTest2()
+        public void ComparePlanesWithMaxPassengerCapacity()
         {
             MixedAirport airport = new MixedAirport
             {
@@ -67,7 +62,7 @@ namespace AircompanyTests.Tests
         }
 
         [Test]
-        public void MyTest3()
+        public void CheckSortInAirportByMaxLoadCapacity()
         {
             MixedAirport airport = new MixedAirport
             {
