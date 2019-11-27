@@ -13,14 +13,7 @@ namespace Aircompany
         {
             get
             {
-                if (_planes == null)
-                {
-                    throw new PlanesNoFoundException("Planes were not set.");
-                }
-                else
-                {
-                    return _planes;
-                }
+                return _planes ?? throw new PlanesNoFoundException("Planes were not set.");
             }
 
             set
@@ -54,9 +47,7 @@ namespace Aircompany
 
         public override string ToString()
         {
-            return "Airport{" +
-                    "planes=" + string.Join(", ", Planes.Select(x => x.Model)) +
-                    '}';
+            return string.Concat("Airport{planes = ", string.Join(", ", Planes.Select(x => x.Model)), '}');
         }
     }
 }

@@ -13,29 +13,14 @@ namespace Aircompany
         {
             Planes = AirportPlanes.Planes;
 
-            MixedAirport airport = new MixedAirport
-            {
-                Planes = Planes
-            };
+            MixedAirport airport = new MixedAirport { Planes = Planes };
 
-            MilitaryAirport militaryAirport = new MilitaryAirport
-            {
-                Planes = airport.GetMilitaryPlanes()
-            };
+            MilitaryAirport militaryAirport = new MilitaryAirport { Planes = airport.GetMilitaryPlanes() };
 
-            PassengerAirport passengerAirport = new PassengerAirport
-            {
-                Planes = airport.GetPassengersPlanes()
-            };
+            PassengerAirport passengerAirport = new PassengerAirport { Planes = airport.GetPassengersPlanes() };
 
-            Console.WriteLine(militaryAirport
-                              .SortByMaxDistance()
-                                  .ToString());
-
-            Console.WriteLine(passengerAirport
-                              .SortByMaxSpeed()
-                              .ToString());
-
+            Console.WriteLine(militaryAirport.SortByMaxDistance().ToString());
+            Console.WriteLine(passengerAirport.SortByMaxSpeed().ToString());
             Console.WriteLine(passengerAirport.GetPlaneWithMaxPassengersCapacity());
 
             Console.ReadKey();

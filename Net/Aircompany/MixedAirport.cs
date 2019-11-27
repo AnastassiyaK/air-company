@@ -1,5 +1,4 @@
-﻿using Aircompany.Models;
-using Aircompany.Planes;
+﻿using Aircompany.Planes;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -9,17 +8,17 @@ namespace Aircompany
     {
         public List<PassengerPlane> GetPassengersPlanes()
         {
-            return Planes.Where(p => p is PassengerPlane).Cast<PassengerPlane>().ToList();
+            return Planes.OfType<PassengerPlane>().ToList();
         }
 
         public List<MilitaryPlane> GetMilitaryPlanes()
         {
-            return Planes.Where(p => p is MilitaryPlane).Cast<MilitaryPlane>().ToList();
+            return Planes.OfType<MilitaryPlane>().ToList();
         }
 
         public List<MilitaryPlane> GetTransportMilitaryPlanes()
         {
-            return GetMilitaryPlanes().Where(p => p.Type == MilitaryType.TRANSPORT).ToList();
+            return GetMilitaryPlanes().Where(p => p.IsTransport()).ToList();
         }
     }
 }

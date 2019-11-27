@@ -2,9 +2,9 @@
 {
     public enum ClassificationLevel
     {
-        UNCLASSIFIED,
-        CONFIDENTIAL,
-        SECRET,
-        TOP_SECRET
+        Unclassified,
+        Confidental,
+        Secret,
+        TopSecret
     }
 }

@@ -1,5 +1,4 @@
-﻿using Aircompany.Exceptions;
-using Aircompany.Planes;
+﻿using Aircompany.Planes;
 using System.Linq;
 
 namespace Aircompany
@@ -8,7 +7,7 @@ namespace Aircompany
     {
         public PassengerPlane GetPlaneWithMaxPassengersCapacity()
         {
-            return _planes.Aggregate((w, x) => w.PassengersCapacity > x.PassengersCapacity ? w : x);
+            return _planes.OrderByDescending(p => p.PassengersCapacity).First();
         }
     }
 }

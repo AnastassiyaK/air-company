@@ -1,14 +1,11 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Text;
 
 namespace Aircompany.Planes
 {
     public abstract class Plane
     {
-        protected const int integer = -1521134295;
-
-        private static readonly int hashCode = -1043886837;
-
         [JsonProperty("Model")]
         public string Model { get; set; }
 
@@ -23,12 +20,18 @@ namespace Aircompany.Planes
 
         public override string ToString()
         {
-            return "Plane{" +
-                "model='" + Model + '\'' +
-                ", maxSpeed=" + MaxSpeed +
-                ", maxFlightDistance=" + MaxFlightDistance +
-                ", maxLoadCapacity=" + MaxLoadCapacity +
-                '}';
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.Append("Plane{model = '");
+            stringBuilder.Append(Model);
+            stringBuilder.Append('\'');
+            stringBuilder.Append(", maxSpeed=");
+            stringBuilder.Append(MaxSpeed);
+            stringBuilder.Append(", maxFlightDistance=");
+            stringBuilder.Append(MaxFlightDistance);
+            stringBuilder.Append(", maxLoadCapacity=");
+            stringBuilder.Append(MaxLoadCapacity);
+            stringBuilder.Append('}');
+            return stringBuilder.ToString();
         }
 
         public override bool Equals(object obj)
@@ -43,11 +46,12 @@ namespace Aircompany.Planes
 
         public override int GetHashCode()
         {
-            var tempHashCode = hashCode * integer + EqualityComparer<string>.Default.GetHashCode(Model);
-            tempHashCode = tempHashCode * integer + MaxSpeed.GetHashCode();
-            tempHashCode = tempHashCode * integer + MaxFlightDistance.GetHashCode();
-            tempHashCode = tempHashCode * integer + MaxLoadCapacity.GetHashCode();
-            return tempHashCode;
+            var hashCode = -1043886837;
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Model);
+            hashCode = hashCode * -1521134295 + MaxSpeed.GetHashCode();
+            hashCode = hashCode * -1521134295 + MaxFlightDistance.GetHashCode();
+            hashCode = hashCode * -1521134295 + MaxLoadCapacity.GetHashCode();
+            return hashCode;
         }
     }
 }

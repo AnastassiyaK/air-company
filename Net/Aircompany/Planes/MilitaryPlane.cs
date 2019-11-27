@@ -1,15 +1,17 @@
-﻿using Aircompany.Exceptions;
-using Aircompany.Models;
+﻿using Aircompany.Models;
 using Newtonsoft.Json;
 
 namespace Aircompany.Planes
 {
     public class MilitaryPlane : Plane
     {
-        private static readonly int hashCode = 1701194404;
-
         [JsonProperty("MilitaryType")]
         public MilitaryType Type { get; set; }
+
+        public bool IsTransport()
+        {
+            return Type == MilitaryType.Transport;
+        }
 
         public override bool Equals(object obj)
         {
@@ -21,16 +23,15 @@ namespace Aircompany.Planes
 
         public override int GetHashCode()
         {
-            var tempHashCode = hashCode * integer + base.GetHashCode();
-            tempHashCode = tempHashCode * integer + Type.GetHashCode();
-            return tempHashCode;
+            var hashCode = 1701194404;
+            hashCode = hashCode * -1521134295 + base.GetHashCode();
+            hashCode = hashCode * -1521134295 + Type.GetHashCode();
+            return hashCode;
         }
 
         public override string ToString()
         {
-            return base.ToString().Replace("}",
-                    ", type=" + Type +
-                    '}');
+            return base.ToString().Replace("}", ", type=" + Type + '}');
         }
     }
 }

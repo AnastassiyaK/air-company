@@ -11,7 +11,7 @@ namespace Aircompany.Data
     {
         static AirportPlanes()
         {
-            var planes = JsonConvert.DeserializeObject<AirportPlanes>(GetJSONString());
+            JsonConvert.DeserializeObject<AirportPlanes>(GetJSONString());
             Planes.AddRange(PassengersPlanes);
             Planes.AddRange(MilitaryPlanes);
         }
